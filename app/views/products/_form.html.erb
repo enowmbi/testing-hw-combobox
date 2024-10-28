@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div data-controller='products'>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.combobox :product_category_id, ProductCategory.all, 'data-action': 'change->products#changeSelection' %>
+  </div>
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
